@@ -1,0 +1,76 @@
+<div class="bg_content"> 
+<div id="column-right">
+  <div class="box">
+    <div class="box-heading"><h2>Account</h2></div>
+    <div class="box-content">
+      <ul class="account_list">
+        <li><a href="#">Login</a> / <a href="/users/new">Register</a></li>
+        <li><a href="#">Forgotten Password</a></li>
+        <li><a href="#">My Account</a></li>
+        <li><a href="#">Wish List</a></li>
+        <li><a href="#">Order History</a></li>
+        <li><a href="#">Downloads</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Transactions</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <h1>Register Account</h1>
+
+  <span> 
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+     » <a href="#">Account</a>
+     » <a href="/users/new">Register</a>
+  </div>
+  
+    <p>If you already have an account with us, please login at the <a href="/users/sign_in">login page</a>.</p>
+    
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <h2>Your Personal Details</h2>
+      <div class="content">
+        <table class="form">        
+          <tbody>        
+          <tr>
+            <div class="field">
+              <td><span class="required">*</span> E-Mail:</td>
+              <td><input autofocus="autofocus" id="user_email" type="text" name="user[email]" ></td>
+            </div>
+          </tr>
+        </tbody></table>
+      </div>
+    
+      <h2>Your Password</h2>
+      <div class="content">
+        <table class="form">
+          <tbody>
+          <tr>
+            <div class="field">
+              <td><span class="required">*</span> Password:</td>
+              <% if @validatable %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />              
+              <td><%= f.password_field :password, autocomplete: "off" %></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="field">
+              <td><span class="required">*</span> Password Confirm:</td>              
+              <td><%= f.password_field :password_confirmation, autocomplete: "off" %></td>
+            </div>
+          </tr>
+          </tbody>
+        </table>
+      </div>    
+      <div class="actions">        
+        <input type="submit" value="Create new account" class="button" name="commit" >
+      </div>        
+    <% end %>    
+  </span>
+</div>
+
+<div style="clear:both"></div>
+</div><!--   END  bg_content  -->

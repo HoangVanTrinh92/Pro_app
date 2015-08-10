@@ -1,20 +1,24 @@
-default: &default
+common: &common
   adapter: mysql2
   encoding: utf8
+  reconnect: false
   pool: 5
+  host: localhost
   username: root
   password: 20101992
 
 development:
-  <<: *default
+  <<: *common
   database: pro_app_development
 
 test:
-  <<: *default
+  <<: *common
   database: pro_app_test
 
+staging:
+  <<: *common
+  database: pro_app_staging
+
 production:
-  <<: *default
-  database: pro_app_production
-  username: pro_app
-  password: <%= ENV['PRO_APP_DATABASE_PASSWORD'] %>
+  <<: *common
+  database: pro_app

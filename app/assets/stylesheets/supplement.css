@@ -1,0 +1,17 @@
+#users-list {
+  background: url(images/bg_down_menu.jpg);
+  padding :30px;
+}
+
+#users-list > div {
+  width: 300px;
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+#users-list img {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-right: 15px;
+}

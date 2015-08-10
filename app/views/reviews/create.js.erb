@@ -1,0 +1,9 @@
+<% if @review.errors.any? %>
+  $('.review-error').html('<%= escape_javascript(render 'shared/error_messages', obj: @review) %>');
+<% else %>
+  var reviews_list = $('#reviews-list');
+  reviews_list.prepend('<%= escape_javascript(render partial: @review) %>');
+  reviews_list.find('div:last-child').addClass('last-review');
+  $('#reviews-count').html('This book has <%= escape_javascript(pluralize(@book.reviews.count, 'review')) %>');
+  $('#review-form').html('<%= escape_javascript(render('reviews/review_form')) %>');
+<% end %>

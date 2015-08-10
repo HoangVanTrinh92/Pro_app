@@ -1,56 +1,38 @@
-source "https://rubygems.org"
-gem "rails", "4.2.1"
-gem "fog"
-gem "mini_magick"
-gem "carrierwave"
-gem "devise"
-gem "cancancan"
-gem "ransack"
-gem "rails_config"
-gem "bcrypt"
-gem "kaminari"
-gem "sass-rails"
-gem "bootstrap-sass"
-gem "uglifier"
-gem "coffee-rails"
-gem "jquery-rails"
-gem "turbolinks"
-gem "ratyrate"
-gem "jbuilder", "~> 2.0"
-gem "sdoc", "~> 0.4.0", group: :doc
-gem "omniauth"
-gem "omniauth-google-oauth2"
-gem "omniauth-facebook"
-gem "omniauth-twitter"
-gem "omniauth-linkedin"
-gem "rails_admin", github: "sferik/rails_admin"
-gem "rails_admin_map_field", git: "https://github.com/HieuMeo/RailsAdminMapField.git"
-gem "rails_admin_nestable"
-gem "fancybox2-rails"
-gem "bootstrap-social-rails"
-gem "font-awesome-rails"
-gem "remotipart"
-gem "websocket-rails"
-gem "ancestry"
-gem "superfish-rails"
+source 'https://rubygems.org'
+
+gem 'rails',                   '4.2.0'
+gem 'bcrypt',                  '3.1.7'
+gem 'faker',                   '1.4.2'
+gem 'carrierwave',             '0.10.0'
+gem 'mini_magick',             '3.8.0'
+gem 'fog',                     '1.34.0'
+gem 'will_paginate',           '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
+gem 'bootstrap-sass',          '3.2.0.0'
+gem 'sass-rails',              '5.0.1'
+gem 'uglifier',                '2.5.3'
+gem 'coffee-rails',            '4.1.0'
+gem 'jquery-rails',            '4.0.3'
+gem 'jquery-ui-rails'
+gem 'turbolinks',              '2.3.0'
+gem 'jbuilder',                '2.2.3'
+gem 'sdoc',                    '0.4.0', group: :doc
+gem 'devise'
+gem 'mysql2',                  '0.3.18'
 
 group :development, :test do
-  gem "dotenv-rails"
-  gem "mysql2"
-  gem "pry"
-  gem "web-console"
-  gem "spring"
-  gem "faker"
-  gem "factory_girl_rails"
+  gem 'byebug',      '3.4.0'
+  gem 'web-console', '2.0.0.beta3'
+  gem 'spring',      '1.1.3'
 end
 
 group :test do
-  gem "capybara"
-  gem "launchy"
-  gem "guard-rspec"
-  gem "rspec-rails"
+  gem 'minitest-reporters', '1.0.5'
+  gem 'mini_backtrace',     '0.1.3'
+  gem 'guard-minitest',     '2.3.1'
 end
 
 group :production do
-  gem "unicorn"
+  gem 'rails_12factor', '0.0.2'
+  gem 'unicorn',        '4.8.3'
 end

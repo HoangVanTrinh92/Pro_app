@@ -1,0 +1,6 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+<% @users.each do |user| %>
+  <h2><%= user.email %></h2>
+  </br>
+<% end %>
