@@ -1,0 +1,51 @@
+<div class="bg_content"> 
+<div id="column-left" style="background:none">
+  <div id="column-right" style="margin-bottom:0px">
+    <div class="box">
+      <div class="box-heading"><h2>Users</h2></div>
+      <div class="box-content">
+        <ul class="account_list">
+          <li><a href="#">List User</a></li>
+          <li><a href="#">Quest'User</a></li>
+          <li><a href="#">Following</a></li>
+          <li><a href="#">Follower</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="column-right">
+    <div class="box">
+      <div class="box-heading"><h2>Bookshelf</h2></div>
+      <div class="box-content">
+        <ul class="account_list">
+          <li><a href="#">Add new book</a></li>
+          <li><a href="#">List Book</a></li>
+          <li><a href="#">Favorite Book</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Other Users</a></li>	             
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <h1>List Users</h1>
+  <span>  
+    <div class="breadcrumb">
+      <a href="#">Home</a>
+      » <a href="#">AUDIOBOOKS</a>
+    </div>
+    
+    <div id="users-list">	    
+      <% @users.each do |user| %>
+      <div>
+        <img src="../assets/avt_default.jpg">
+        <p><%= link_to user.email, admin_users_path %></p>
+        <%= link_to 'Destroy', [:admin, user], confirm: 'Are you sure?', method: :delete %>
+      </div>
+      <% end %>
+	    <%= will_paginate %>
+    </div>
+  </span>
+<div style="clear:both"></div>
+</div><!--   END  bg_content  -->

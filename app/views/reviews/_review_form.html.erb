@@ -1,0 +1,8 @@
+<%= form_for [@book, @book.reviews.new], remote: true do |f| %>
+  <div class="form-group">
+    <%= f.text_area :content, placeholder: 'Insert content review in here' %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <%= f.submit 'Post review', class: 'btn btn-primary' %>
+  <div class="review-error"></div>
+<% end %>

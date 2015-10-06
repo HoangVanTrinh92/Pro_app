@@ -1,0 +1,46 @@
+
+<div class = "books">
+
+  <p>
+    <%= image_tag @book.picture if @book.picture? %>
+  </p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @book.title %>
+  </p>
+
+  <p>
+    <strong>Publish date:</strong>
+    <%= @book.publish_date %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= @book.author %>
+  </p>
+
+  <p>
+    <strong>Number page:</strong>
+    <%= @book.number_page %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= @book.category %>
+  </p>
+
+  <div class="reviews">
+    <h4 id="reviews-count">This book has <%= pluralize(@book.reviews.count, 'review') %></h4>
+   
+    <div>
+    <%= render 'reviews/review_form' %>
+    </div>
+  </div>
+ 
+  <div id="reviews-list">
+    
+    <%= render partial: @book.reload.reviews %>
+  </div>
+
+</div>
