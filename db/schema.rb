@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20150415061605) do
     t.datetime "publish_date"
     t.string   "author",       limit: 255
     t.integer  "number_page",  limit: 4
-    t.string   "category",     limit: 255
+    t.integer  "category",     limit: 4
     t.string   "picture",      limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false

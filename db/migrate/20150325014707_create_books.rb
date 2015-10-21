@@ -5,7 +5,7 @@ class CreateBooks < ActiveRecord::Migration
       t.datetime :publish_date
       t.string :author
       t.integer :number_page
-      t.string :category
+      t.integer :category
       t.string :picture
 
       t.timestamps null: false
