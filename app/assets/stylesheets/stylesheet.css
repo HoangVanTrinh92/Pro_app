@@ -13,7 +13,7 @@ body {
   margin: 0px;
   padding: 0px;
 }
-body, td, th, input, textarea, select, a {
+body, td, th, input, textarea, select{
   font-size: 12px;
 }
 
@@ -52,7 +52,7 @@ h2 {
   font-size:12px!important;
   color:#3d1b0f!important
 }
-a, a:visited, a b {
+a, a b {
   color: #3d1b0f;
   text-decoration: underline;
   cursor: pointer;
@@ -2016,12 +2016,6 @@ div.phone_bottom p {
   color:#342112;
   font-size:55px;
   margin-top:25px
-}
-
-.books {
-  margin: 100px 10px 100px 10px;
-  background-color: none;
-  height: auto;
 }
 
 .carousel-inner > .item > img,

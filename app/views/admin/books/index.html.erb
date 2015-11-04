@@ -9,13 +9,17 @@
         <div class =  "book">
 
           <p>
-            <%= image_tag book.picture if book.picture? %>
+            <%= link_to admin_book_path(book) do %>
+              <%= image_tag book.picture if book.picture? %>
+            <% end %>
           </p>
 
-          <p>
-            <strong>Title:</strong>
-            <%= book.title %>
-          </p>
+          <div class="title">
+            <%= link_to admin_book_path(book) do %>
+              <%= book.title %>
+              <span><img class="callout" src="../assets/callout_black.gif" /><%= book.title %></span>
+            <% end %>
+          </div>
 
           <p>
             <strong>Publish date:</strong>
