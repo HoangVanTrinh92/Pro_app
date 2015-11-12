@@ -1,0 +1,13 @@
+<div id="search">
+  <%= search_form_for @search, url: books_path do |f| %>
+    <fieldset>
+      <ul>
+        <li>
+          <%= f.label :title_cont %>
+          <%= f.text_field :title_cont %>
+        </li>
+      </ul>
+    </fieldset>
+    <div class="button-search"><%= f.submit "search", class: "btn btn-primary" %></div>
+  <% end %>
+</div>

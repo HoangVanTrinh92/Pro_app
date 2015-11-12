@@ -1,7 +1,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <div id="header">
   <div id="logo"><a href="/"><img src="../assets/images/logo.png" title="Your Store" alt="Your Store"></a></div>
-  <div id="cart">
+  <!-- <div id="cart">
     <div class="heading">
       <h4>Shopping Cart</h4>
       <a><span id="cart-total">0 item(s) - $0.00</span></a>
@@ -10,10 +10,16 @@
       <div class="empty">Your shopping cart is empty!</div>
     </div>
   </div>
-  <div id="search">
-    <div class="button-search"></div>
-    <input name="search" placeholder="Search" type="text">
-  </div>
+ -->
+
+    <%= search_form_for @search, url: books_path do |f| %>
+      <div id="search">
+        <div id="search-input"><%= f.text_field :title_cont, placeholder: "Input book name" %></div>
+      </div>
+      <div id="search-button"><%= f.submit "Search" %></div>
+    <% end %>
+
+
   <div id="welcome" >
     <div id="user_nav">
       <% if !user_signed_in? %>
