@@ -61,7 +61,7 @@ class Admin::BooksController < ApplicationController
     elsif params[:type] == "political-books-philosophy"
       @books = Book.political_books_philosophy
     else
-      @books = Book.all
+      @books = @search.result
     end
   end
 

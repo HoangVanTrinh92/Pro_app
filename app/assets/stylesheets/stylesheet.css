@@ -320,14 +320,24 @@ label {
   padding-top: 50px;
   text-align: center;
 }
+#header #search-button {
+  width: 15px;
+  color: #A18A68;
+  margin-left: 720px;
+  padding-top: 45px;
+}
+#header #search #search-input {
+  width: 240px;
+  float: left;
+}
 #header #search {
   position: absolute;
   top: 46px;
-  right: 245px;
-  width: 280px;
-  z-index: 150;
+  right: 285px;
+  width: 265px;
+  /*z-index: 150;*/
 }
-#header .button-search {
+#header #search .button-search {
   position: absolute;
   right: 5px;
   background: url('images/search.gif') center center no-repeat;
@@ -387,7 +397,7 @@ label {
 }
 /* menu */
 #menu {
-  height: 50px; width:555px; float:right; position:relative; top:120px;
+  height: 50px; width:555px; float:right; position:relative; top:60px;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -khtml-border-radius:0;
