@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  load_and_authorize_resource
 
   def create
     @book = Book.find params[:book_id]
@@ -9,7 +10,7 @@ class ReviewsController < ApplicationController
       end
     end
   end
-  
+
   private
   def review_params
     params.require(:review).permit :user_id, :book_id, :content

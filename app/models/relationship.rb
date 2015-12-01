@@ -1,7 +1,7 @@
 class Relationship < ActiveRecord::Base
-  belongs_to :follower, class_name: "User"
-  belongs_to :followed, class_name: "User"
+  belongs_to :user, class_name: "User"
 
-  validates :follower_id, presence: true
-  validates :followed_id, presence: true
+  validates :user1_id, presence: true
+  validates :user2_id, presence: true
+  validates :relation, presence: true
 end

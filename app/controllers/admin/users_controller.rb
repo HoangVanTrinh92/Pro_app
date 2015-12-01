@@ -1,6 +1,7 @@
 class Admin::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :is_admin
+  load_and_authorize_resource
 
   def index
     @users = User.normal.all.paginate page: params[:page]

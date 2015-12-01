@@ -56,8 +56,7 @@
   </table>
 
 <br>
-
-<% if current_user.role == "admin" %>
+<% if current_user.role = 1 %>
   <%= link_to 'New Book', new_admin_book_path %>
 <% end %>
 </div>
