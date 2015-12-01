@@ -25,15 +25,12 @@ ActiveRecord::Schema.define(version: 20150415061605) do
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.integer  "follower_id", limit: 4
-    t.integer  "followed_id", limit: 4
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.integer  "user1_id",   limit: 4
+    t.integer  "user2_id",   limit: 4
+    t.integer  "relation",   limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
-
-  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
-  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
-  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.text     "content",    limit: 65535

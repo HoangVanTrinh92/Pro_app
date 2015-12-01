@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  load_and_authorize_resource
+
   def index
     if params[:type] == "domestic-literature"
       @books = Book.domestic_literature
