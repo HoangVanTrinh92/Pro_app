@@ -1,9 +1,12 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  # protect_from_forgery with: :exception
   before_action :search_form
+  # before_action :authenticate_user!
 
-  protect_from_forgery with: :exception
+  # rescue_from CanCan::AccessDenied do |exception|
+  #   flash[:alert] = exception.message
+  #   redirect_to current_user && current_user.manager? ? root_url : new_user_session_path
+  # end
   private
   def search_form
     @search = Book.all.search params[:q]

@@ -3,7 +3,7 @@ class CreateRelationships < ActiveRecord::Migration
     create_table :relationships do |t|
     	t.integer :user1_id
     	t.integer :user2_id
-      t.integer :relation
+      t.integer :relation, default: 0
 
       t.timestamps
     end

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20150415061605) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title",        limit: 255
-    t.datetime "publish_date"
+    t.date     "publish_date"
     t.string   "author",       limit: 255
     t.integer  "number_page",  limit: 4
     t.integer  "category",     limit: 4
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150415061605) do
   create_table "relationships", force: :cascade do |t|
     t.integer  "user1_id",   limit: 4
     t.integer  "user2_id",   limit: 4
-    t.integer  "relation",   limit: 4
+    t.integer  "relation",   limit: 4, default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
