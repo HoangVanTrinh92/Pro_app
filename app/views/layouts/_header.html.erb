@@ -11,7 +11,7 @@
     </div>
   </div>
  -->
-
+    <%= current_user.show_suggest_user %>
     <%= search_form_for @search, url: books_path do |f| %>
       <div id="search">
         <div id="search-input"><%= f.text_field :title_cont, placeholder: "Input book name" %></div>
@@ -43,60 +43,60 @@
       <li><a href="#">LITERATURE</a>
         <div style="">
           <ul style="">
-            <li><%= link_to "Domestic Literature", admin_books_path(type: "domestic-literature") %></li>
-            <li><%= link_to "Foreign Literature", admin_books_path(type: "foreign-literature") %></li>
-            <li><%= link_to "Fiction", admin_books_path(type: "fiction") %></li>
-            <li><%= link_to "Romance", admin_books_path(type: "romance") %></li>
-            <li><%= link_to "History", admin_books_path(type: "history") %></li>
-            <li><%= link_to "Poetry", admin_books_path(type: "poetry") %></li>
-            <li><%= link_to "Short stories", admin_books_path(type: "short-stories") %></li>
+            <li><%= link_to "Domestic Literature", books_path(type: "domestic-literature") %></li>
+            <li><%= link_to "Foreign Literature", books_path(type: "foreign-literature") %></li>
+            <li><%= link_to "Fiction", books_path(type: "fiction") %></li>
+            <li><%= link_to "Romance", books_path(type: "romance") %></li>
+            <li><%= link_to "History", books_path(type: "history") %></li>
+            <li><%= link_to "Poetry", books_path(type: "poetry") %></li>
+            <li><%= link_to "Short stories", books_path(type: "short-stories") %></li>
           </ul>
         </div>
       </li>
       <li><a href="#">ECONOMY</a>
         <div style="">
           <ul style="">
-            <li><%= link_to "Marketing", admin_books_path(type: "marketing") %></li>
-            <li><%= link_to "Financial-Currency", admin_books_path(type: "financial-currency") %></li>
-            <li><%= link_to "Low", admin_books_path(type: "low") %></li>
-            <li><%= link_to "Economic Investment", admin_books_path(type: "economic-investment") %></li>
-            <li><%= link_to "Famous", admin_books_path(type: "famous") %></li>
+            <li><%= link_to "Marketing", books_path(type: "marketing") %></li>
+            <li><%= link_to "Financial-Currency", books_path(type: "financial-currency") %></li>
+            <li><%= link_to "Low", books_path(type: "low") %></li>
+            <li><%= link_to "Economic Investment", books_path(type: "economic-investment") %></li>
+            <li><%= link_to "Famous", books_path(type: "famous") %></li>
           </ul>
         </div>
       </li>
       <li><a href="#">IT BOOK'S</a>
         <div style="">
           <ul style="">
-            <li><%= link_to "Computer Science", admin_books_path(type: "computer-science") %></li>
-            <li><%= link_to "Information System", admin_books_path(type: "information-system") %></li>
-            <li><%= link_to "Internet", admin_books_path(type: "internet") %></li>
-            <li><%= link_to "Software Technology", admin_books_path(type: "software-technology") %></li>
-            <li><%= link_to "Computer Engineering", admin_books_path(type: "computer-engineering") %></li>
-            <li><%= link_to "Hacker", admin_books_path(type: "hacker") %></li>
+            <li><%= link_to "Computer Science", books_path(type: "computer-science") %></li>
+            <li><%= link_to "Information System", books_path(type: "information-system") %></li>
+            <li><%= link_to "Internet", books_path(type: "internet") %></li>
+            <li><%= link_to "Software Technology", books_path(type: "software-technology") %></li>
+            <li><%= link_to "Computer Engineering", books_path(type: "computer-engineering") %></li>
+            <li><%= link_to "Hacker", books_path(type: "hacker") %></li>
           </ul>
         </div>
       </li>
       <li><a href="#">CHILDREN'S</a>
         <div style="">
           <ul style="">
-            <li><%= link_to "Natural Sciences", admin_books_path(type: "natural-science") %></li>
-            <li><%= link_to "Social Sciences", admin_books_path(type: "social-sciences") %></li>
-            <li><%= link_to "Foreign Language", admin_books_path(type: "foreign-language") %></li>
-            <li><%= link_to "Manga", admin_books_path(type: "manga") %></li>
-            <li><%= link_to "Arts", admin_books_path(type: "arts") %></li>
-            <li><%= link_to "Negative", admin_books_path(type: "negative") %></li>
+            <li><%= link_to "Natural Sciences", books_path(type: "natural-science") %></li>
+            <li><%= link_to "Social Sciences", books_path(type: "social-sciences") %></li>
+            <li><%= link_to "Foreign Language", books_path(type: "foreign-language") %></li>
+            <li><%= link_to "Manga", books_path(type: "manga") %></li>
+            <li><%= link_to "Arts", books_path(type: "arts") %></li>
+            <li><%= link_to "Negative", books_path(type: "negative") %></li>
           </ul>
         </div>
       </li>
       <li><a href="#">LIFE BOOK'S</a>
         <div style="">
           <ul style="">
-            <li><%= link_to "Mystical science books", admin_books_path(type: "mystical-science-books") %></li>
-            <li><%= link_to "Family Cookbook", admin_books_path(type: "family-cookbook") %></li>
-            <li><%= link_to "Historical geography", admin_books_path(type: "historical-geography") %></li>
-            <li><%= link_to "Agriculture and forestry", admin_books_path(type: "agriculture-and-forestry") %></li>
-            <li><%= link_to "Sports Books", admin_books_path(type: "sports-books") %></li>
-            <li><%= link_to "Political books-philosophy", admin_books_path(type: "political-books-philosophy") %></li>
+            <li><%= link_to "Mystical science books", books_path(type: "mystical-science-books") %></li>
+            <li><%= link_to "Family Cookbook", books_path(type: "family-cookbook") %></li>
+            <li><%= link_to "Historical geography", books_path(type: "historical-geography") %></li>
+            <li><%= link_to "Agriculture and forestry", books_path(type: "agriculture-and-forestry") %></li>
+            <li><%= link_to "Sports Books", books_path(type: "sports-books") %></li>
+            <li><%= link_to "Political books-philosophy", books_path(type: "political-books-philosophy") %></li>
           </ul>
         </div>
       </li>
