@@ -11,7 +11,7 @@
     </div>
   </div>
  -->
-    <%= current_user.show_suggest_user %>
+
     <%= search_form_for @search, url: books_path do |f| %>
       <div id="search">
         <div id="search-input"><%= f.text_field :title_cont, placeholder: "Input book name" %></div>
@@ -102,4 +102,4 @@
       </li>
     </ul>
   </div>
-</div>
+

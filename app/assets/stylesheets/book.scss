@@ -1,6 +1,6 @@
 .book {
   // background-color: red;
-  margin-top: 5px;
+  margin-top: 25px;
   width: 20%;
   float: left;
   border: 1px solid #A7A39C;
@@ -13,6 +13,27 @@
     font-size: 20px;
     background-color: #D0D0D0;
   }
+  .author {
+    width: 100%;
+    float: left;
+    text-overflow: ellipsis;
+    font-size: 10px;
+  }
+}
+
+#show-book {
+  width: 100%;
+  margin: 15px;
+    tr {
+      margin-top: 5px;
+      .td-image {
+        width: 142px;
+        margin: 1px 20px 1px 20px;
+      }
+      .td-info {
+        width: 600px;
+      }
+    }
 }
 
 .title {outline:none; }
@@ -23,11 +44,33 @@
 .title span { border-radius:2px; box-shadow: 0px 0px 8px 4px #666; /*opacity: 0.8;*/ }
 
 .books {
-  margin: 50px 10px 100px 10px;
+  margin: 85px 10px 100px 10px;
   background-color: none;
   height: auto;
 }
 
+#cont-top {
+  height: 200px;
+}
+
+#cont-wraper {
+  background-color: white;
+  margin-top: 180px;
+}
+
+#advand-search {
+  background-color: #F2F1F0;
+  height: 190px;
+  .advand-search-form {
+    margin: 15px;
+  }
+}
+
+#listting-books {
+  min-height: 1400px;
+  max-height: 3000px;
+  margin: 300px 10px 100px 10px
+}
 ///// Home static page
 
 #myCarousel {

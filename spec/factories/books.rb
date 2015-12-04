@@ -13,5 +13,6 @@ FactoryGirl.define do
       :historical_geography, :agriculture_and_forestry, :sports_books,
       :political_books_philosophy].sample}
     sequence(:picture) {|n| "product_#{n}-142x211"}
+    #picture "product_1-142x211"
   end
 end

@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   relationships = Relationship.all
 
-  def show_suggest_user level=3
+  def show_suggest_user level=10
     relations = Relationship.all.each_with_object([]) do |r, obj|
       obj << r if r.user1_id == self.id || r.user2_id == self.id
     end
@@ -32,7 +32,11 @@ class User < ActiveRecord::Base
     count_books = book_ids.flatten.uniq.each_with_object([]) do |most_book, obje|
       obje << [book_ids.flatten.count(most_book), most_book]
     end
-    count_books.sort.reverse.take(3)
+    count_books.sort.reverse.take(5).flatten.select.each_with_index { |_,i| i % 2 == 1 }
+  end
+
+  def curr_user
+    User.find_by(id: self.id)
   end
 
   private

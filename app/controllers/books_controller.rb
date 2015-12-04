@@ -4,65 +4,65 @@ class BooksController < ApplicationController
   def index
     case params[:type]
     when "domestic-literature"
-      @books = Book.domestic_literature
+      @books = Book.domestic_literature.page params[:page]
     when "foreign-literature"
-      @books = Book.foreign_literature
+      @books = Book.foreign_literature.page params[:page]
     when "fiction"
-      @books = Book.fiction
+      @books = Book.fiction.page params[:page]
     when "romance"
-      @books = Book.romance
+      @books = Book.romance.page params[:page]
     when "history"
-      @books = Book.history
+      @books = Book.history.page params[:page]
     when "poetry"
-      @books = Book.poetry
+      @books = Book.poetry.page params[:page]
     when "short-stories"
-      @books = Book.short_stories
+      @books = Book.short_stories.page params[:page]
     when "marketing"
       @books = Book.marketing
     when "financial-currency"
-      @books = Book.financial_currency
+      @books = Book.financial_currency.page params[:page]
     when "low"
       @books = Book.low
     when "economic-investment"
-      @books = Book.economic_investment
+      @books = Book.economic_investment.page params[:page]
     when "famous"
-      @books = Book.famous
+      @books = Book.famous.page params[:page]
     when "computer-science"
-      @books = Book.computer_science
+      @books = Book.computer_science.page params[:page]
     when "information-system"
-      @books = Book.information_system
+      @books = Book.information_system.page params[:page]
     when "software-technology"
-      @books = Book.software_technology
+      @books = Book.software_technology.page params[:page]
     when "computer-engineering"
-      @books = Book.computer_engineering
+      @books = Book.computer_engineering.page params[:page]
     when "hacker"
-      @books = Book.hacker
+      @books = Book.hacker.page params[:page]
     when "natural-science"
-      @books = Book.natural_science
+      @books = Book.natural_science.page params[:page]
     when "social-sciences"
-      @books = Book.social_sciences
+      @books = Book.social_sciences.page params[:page]
     when "foreign-language"
-      @books = Book.foreign_language
+      @books = Book.foreign_language.page params[:page]
     when "manga"
-      @books = Book.manga
+      @books = Book.manga.page params[:page]
     when "arts"
-      @books = Book.arts
+      @books = Book.arts.page params[:page]
     when "negative"
-      @books = Book.negative
+      @books = Book.negative.page params[:page]
     when "mystical-science-books"
-      @books = Book.mystical_science_books
+      @books = Book.mystical_science_books.page params[:page]
     when "family-cookbook"
-      @books = Book.family_cookbook
+      @books = Book.family_cookbook.page params[:page]
     when "historical-geography"
-      @books = Book.historical_geography
+      @books = Book.historical_geography.page params[:page]
     when "agriculture-and-forestry"
-      @books = Book.agriculture_and_forestry
+      @books = Book.agriculture_and_forestry.page params[:page]
     when "sports-books"
-      @books = Book.sports_books
+      @books = Book.sports_books.page params[:page]
     when "political-books-philosophy"
-      @books = Book.political_books_philosophy
+      @books = Book.political_books_philosophy.page params[:page]
     else
-      @books = @search.result
+      @books = @search.result.page params[:page]
     end
   end
 

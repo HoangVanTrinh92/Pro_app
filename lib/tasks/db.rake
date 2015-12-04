@@ -7,13 +7,13 @@ namespace :db do
     FactoryGirl.create :user, role: 1, email: "admin@pro.com"
 
     puts "Creating users"
-    4.times {FactoryGirl.create :user, role: 0}
+    5.times {FactoryGirl.create :user, role: 0}
 
     # puts "Creating User relationships"
     # 20.times {FactoryGirl.create :relationship}
 
     puts "Creating Reviews and Ratings"
-    10.times {FactoryGirl.create :review}
+    20.times {FactoryGirl.create :review}
 
     puts "Creating books"
     5.times {FactoryGirl.create :book}
