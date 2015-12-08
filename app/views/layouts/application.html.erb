@@ -14,8 +14,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-  <script type="text/javascript" src="/assets/jcarousellite.js"></script>
-  <script type="text/javascript"> $(function() { $(".carousel").jCarouselLite({ btnNext: ".next", btnPrev: ".prev" }); }); </script>
+  <!--<script type="text/javascript" src="/assets/jcarousellite.js"></script>
+  <script type="text/javascript"> $(function() { $(".carousel").jCarouselLite({ btnNext: ".next", btnPrev: ".prev" }); }); </script>-->
 
   <script type="text/javascript">
     $(document).ready(function() {
@@ -50,19 +50,17 @@
       })
     });
   </script>
-  <%= render "layouts/shim" %>
 </head>
 
 <body>
-<div class="bg_bottom">
-<div class="bg_top">
-<div id="container">
-  <%= render "layouts/header" %>
-  <div id="notification"></div>
-  <%= yield %>
-</div><!--   END  container  -->
-<%= render "layouts/footer" %>
-</div> <!--end bg_top-->
-</div> <!--end bg_bottom-->
+  <div class="bg_bottom">
+    <div class="bg_top">
+      <div id="container">
+        <div id="cont-top"><%= render "layouts/header" %>
+        <div id="cont-wraper"><%= yield %></div>
+      </div><!--   END  container  -->
+      <%#= render "layouts/footer" %>
+    </div> <!--end bg_top-->
+  </div> <!--end bg_bottom-->
 </body>
 </html>
