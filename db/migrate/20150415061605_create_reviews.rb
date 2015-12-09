@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration
       t.text :content
       t.integer :user_id
       t.integer :book_id
-      t.integer :rate
+      t.integer :state
 
       t.timestamps null: false
     end

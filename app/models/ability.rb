@@ -5,13 +5,11 @@ class Ability
     user ||= User.new
     alias_action :create, :update, :destroy, to: :cud
 
-    if user.admin?
+    if user.role?
       can :manage, :all
-    elsif user.normal?
+    else
       can :manage, :all
       cannot :cud, Books
-    else
-      can :read, :all
     end
   end
 end

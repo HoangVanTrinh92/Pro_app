@@ -17,4 +17,5 @@
 //= require_tree .
 
 function add_fields(link, association, content) {
-var new_id = new Date().getTime();
+  var new_id = new Date().getTime();
+}

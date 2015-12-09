@@ -25,64 +25,7 @@
       <div><%= f.submit "Search" %></div>
       </div>
     <% end %>
-  <div>
-
-  <p id="notice"><%= notice %></div>
-  <div id="suggest-book">
-      <% if user_signed_in? %>
-        <% suggest = current_user.show_suggest_user %>
-        <% books = suggest.each_with_object([]) do |s, object|
-          object << Book.find_by(id: s) %>
-        <% end %>
-
-        <div class = "books">
-          <h1>Can you love this books</h1>
-          <% books.each do |book| %>
-            <div class =  "book">
-
-              <div class="book-image">
-                <%= link_to book_path(book) do %>
-                  <%= image_tag book.picture if book.picture? %>
-                <% end %>
-              </div>
-
-              <div class="title">
-                <%= link_to book_path(book) do %>
-                  <%= book.title %>
-                  <span><img class="callout" src="../assets/callout_black.gif" /><%= book.title %></span>
-                <% end %>
-              </div>
-
-              <div class="author">
-                <%= book.author %>
-              </div>
-
-              <div class="number page">
-                <small>
-                  <strong>Number Page:</strong>
-                  <%= book.number_page %>
-                </small>
-              </div>
-
-              <div class="publish date">
-                <small>
-                  <strong>Publish Date:</strong>
-                  <%= book.publish_date %>
-                </small>
-              </div>
-
-              <!-- <p>
-                <%= link_to_if current_user, 'Show', book_path(book) %>
-              </p> -->
-
-            </div>
-          <% end %>
-          <br>
-        </div>
-      <% end %>
-    </div>
   </div>
-
 
   <div id="listting-books">
     <div class = "books">
@@ -131,5 +74,55 @@
     <br>
     </div>
     <%= paginate @books, theme: 'twitter-bootstrap-3'%>
+  </div>
+
+  <p id="notice"><%= notice %></div>
+  <div id="suggest-book">
+    <% if user_signed_in? %>
+      <% suggest = current_user.show_suggest_user %>
+      <% books = suggest.each_with_object([]) do |s, object|
+        object << Book.find_by(id: s) %>
+      <% end %>
+
+      <div class = "books">
+        <h1>You may also like these books</h1>
+        <% books.each do |book| %>
+          <div class =  "book">
+
+            <div class="book-image">
+              <%= link_to book_path(book) do %>
+                <%= image_tag book.picture if book.picture? %>
+              <% end %>
+            </div>
+
+            <div class="title">
+              <%= link_to book_path(book) do %>
+                <%= book.title %>
+                <span><img class="callout" src="../assets/callout_black.gif" /><%= book.title %></span>
+              <% end %>
+            </div>
+
+            <div class="author">
+              <%= book.author %>
+            </div>
+
+            <div class="number page">
+              <small>
+                <strong>Number Page:</strong>
+                <%= book.number_page %>
+              </small>
+            </div>
+
+            <div class="publish date">
+              <small>
+                <strong>Publish Date:</strong>
+                <%= book.publish_date %>
+              </small>
+            </div>
+          </div>
+        <% end %>
+        <br>
+      </div>
+    <% end %>
   </div>
 </div>
