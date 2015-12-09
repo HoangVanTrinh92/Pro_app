@@ -35,7 +35,7 @@
 
           <div class="book-image">
             <%= link_to book_path(book) do %>
-              <%= image_tag book.picture if book.picture? %>
+              <%= image_tag book.picture, class: "image-book" if book.picture? %>
             <% end %>
           </div>
 
@@ -91,7 +91,7 @@
 
             <div class="book-image">
               <%= link_to book_path(book) do %>
-                <%= image_tag book.picture if book.picture? %>
+                <%= image_tag book.picture, class: "image-book" if book.picture? %>
               <% end %>
             </div>
 

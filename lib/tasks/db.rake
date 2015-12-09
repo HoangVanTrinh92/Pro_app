@@ -7,16 +7,17 @@ namespace :db do
     FactoryGirl.create :user, role: 1, email: "admin@pro.com"
 
     puts "Creating users"
-    5.times {FactoryGirl.create :user, role: 0}
+    FactoryGirl.create :user, role: 0, email: "user@pro.com"
+    20.times {FactoryGirl.create :user, role: 0}
 
     # puts "Creating User relationships"
     # 20.times {FactoryGirl.create :relationship}
 
     puts "Creating Reviews and Ratings"
-    20.times {FactoryGirl.create :review}
+    70.times {FactoryGirl.create :review}
 
     puts "Creating books"
-    5.times {FactoryGirl.create :book}
+    40.times {FactoryGirl.create :book}
 
     # puts "Creating ranks 1 to 10"
     # FactoryGirl.create_list :rank, 10
