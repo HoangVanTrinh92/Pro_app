@@ -12,7 +12,7 @@ FactoryGirl.define do
       :manga, :arts, :negative, :mystical_science_books, :family_cookbook,
       :historical_geography, :agriculture_and_forestry, :sports_books,
       :political_books_philosophy].sample}
-    sequence(:picture) {|n| "product_#{n}-142x211"}
+    sequence(:picture) {|n| "product_#{n}"}
     #picture "product_1-142x211"
   end
 end

@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150415061605) do
     t.text     "content",    limit: 65535
     t.integer  "user_id",    limit: 4
     t.integer  "book_id",    limit: 4
-    t.integer  "rate",       limit: 4
+    t.integer  "state",      limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
