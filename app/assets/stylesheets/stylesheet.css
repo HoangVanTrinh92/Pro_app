@@ -1764,7 +1764,7 @@ border: 0px solid #fff;
 div.centr{ width:950px; margin:0 auto;}
 
 
-#footer h3 {
+/*#footer h3 {
   color: #968477;
   font-size: 17px;
   margin-top: 10px;
@@ -1798,7 +1798,7 @@ div.centr{ width:950px; margin:0 auto;}
 #footer .column a:hover {
   text-decoration: none;
   color:#f2e9de;
-}
+}*/
 #powered {
   margin-top: 5px;
   text-align: right;

@@ -72,6 +72,16 @@ class BooksController < ApplicationController
     @new_review = @book.reviews.new
   end
 
+  def update
+    if @book.update_attributes book_params
+      flash[:success] = t "messages.update_success"
+      redirect_to book_path @book
+    else
+      flash[:dange] = t "messages.update_fail"
+      render :show
+    end
+  end
+
   private
     def book_params
       params.require(:book).permit(:title, :publish_date, :author,

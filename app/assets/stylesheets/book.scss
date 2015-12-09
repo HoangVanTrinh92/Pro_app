@@ -1,6 +1,10 @@
+#book-index {
+
+}
+
 .book {
   // background-color: red;
-  margin-top: 25px;
+  margin-top: 5px;
   width: 20%;
   float: left;
   border: 1px solid #A7A39C;
@@ -44,7 +48,7 @@
 .title span { border-radius:2px; box-shadow: 0px 0px 8px 4px #666; /*opacity: 0.8;*/ }
 
 .books {
-  margin: 85px 10px 100px 10px;
+  margin: 15px 10px 100px 10px;
   background-color: none;
   height: auto;
 }
@@ -55,7 +59,9 @@
 
 #cont-wraper {
   background-color: white;
-  margin-top: 180px;
+  margin-top: 140px;
+  min-height: 2500px;
+  max-height: 4000px;
 }
 
 #advand-search {
@@ -67,12 +73,20 @@
 }
 
 #listting-books {
-  min-height: 1400px;
-  max-height: 3000px;
-  margin: 300px 10px 100px 10px
+  margin: 5px;
 }
 ///// Home static page
 
 #myCarousel {
   margin-top: 40px;
+}
+
+#suggest-book {
+  margin-bottom: 700px;
+}
+
+#footer {
+  height: 200px;
+  margin-top: 10px;
+  background-color: #EBEAE9;
 }

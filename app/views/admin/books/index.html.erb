@@ -1,62 +1,89 @@
-<p id="notice"><%= notice %></p>
+<div id="book-index">
+  <div id="add-new-book">
+    <% if current_user.role = 1 %>
+      <%= link_to 'New Book', new_admin_book_path %>
+    <% end %>
+  </div>
+  <div id="advand-search">
+    <%= search_form_for @search, url: books_path do |f| %>
+      <div class="advand-search-form">
+        <div class=search-field>
+          <%= f.label :title_cont, "Book Title" %>
+          <%= f.text_field :title_cont, placeholder: "Input book name" %>
+        </div>
+        <div class=search-field>
+          <%= f.label :author_cont, "Author" %>
+          <%= f.text_field :author_cont, placeholder: "Input author" %>
+        </div>
+        <div class=search-field>
+          <%= f.label :number_page_gteq, "Number page between" %>
+          <%= f.text_field :number_page_gteq, placeholder: "Input number page" %>
+          <%= f.label :number_page_lteq, "and" %>
+          <%= f.text_field :number_page_lteq, placeholder: "Input number page" %>
+        </div>
+        <div class=search-field>
+          <%= f.label :publish_date_gteq, "From date"%>
+          <%= f.date_select :publish_date_gteq %>
+          <%= f.label :publish_date_lteq, "to date" %>
+          <%= f.date_select :publish_date_lteq  %>
+        </div>
+      <div><%= f.submit "Search" %></div>
+      </div>
+    <% end %>
+  </div>
 
-<div class = "books">
-  <h1>Listing Books</h1>
-
-  <table>
-    <tbody>
+  <div id="listting-books">
+    <div class = "books">
+      <h1>Listing Books</h1>
       <% @books.each do |book| %>
         <div class =  "book">
 
-          <p>
-            <%= link_to admin_book_path(book) do %>
+          <div class="book-image">
+            <%= link_to book_path(book) do %>
               <%= image_tag book.picture if book.picture? %>
             <% end %>
-          </p>
+          </div>
 
           <div class="title">
-            <%= link_to admin_book_path(book) do %>
+            <%= link_to book_path(book) do %>
               <%= book.title %>
               <span><img class="callout" src="../assets/callout_black.gif" /><%= book.title %></span>
             <% end %>
           </div>
 
-          <p>
-            <strong>Publish date:</strong>
-            <%= book.publish_date %>
-          </p>
-
-          <p>
-            <strong>Author:</strong>
+          <div class="author">
             <%= book.author %>
-          </p>
+          </div>
 
-          <p>
-            <strong>Number page:</strong>
-            <%= book.number_page %>
-          </p>
+          <div class="number page">
+            <small>
+              <strong>Number Page:</strong>
+              <%= book.number_page %>
+            </small>
+          </div>
 
-          <p>
-            <strong>Category:</strong>
-            <%= book.category %>
-          </p>
+          <div class="publish date">
+            <small>
+              <strong>Publish Date:</strong>
+              <%= book.publish_date %>
+            </small>
+          </div>
 
-          <p>
-            <%= link_to_if current_user, 'Show', admin_book_path(book) %>
-            <% if current_user.role == "admin" %>
-              <%= link_to 'Edit', edit_admin_book_path(book) %>
-              <%= link_to 'Destroy', admin_book_path(book), method: :delete,
-                data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          </p>
+          <% if current_user.role == "admin" %>
+            <%= link_to 'Edit', edit_admin_book_path(book) %>
+            <%= link_to 'Destroy', admin_book_path(book), method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+          <% end %>
+
+          <!-- <div>
+            <%= link_to_if current_user, 'Show', book_path(book) %>
+          </div> -->
 
         </div>
       <% end %>
-    </tbody>
-  </table>
 
-<br>
-<% if current_user.role = 1 %>
-  <%= link_to 'New Book', new_admin_book_path %>
-<% end %>
+    <br>
+    </div>
+    <%= paginate @books, theme: 'twitter-bootstrap-3'%>
+  </div>
 </div>
