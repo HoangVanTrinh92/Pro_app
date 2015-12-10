@@ -89,6 +89,12 @@
   margin-bottom: 50px;
 }
 
+#wish-list {
+  width: 100%;
+  float: left;
+  margin-bottom: 50px;
+}
+
 #footer {
   height: 200px;
   margin-top: 10px;
@@ -103,4 +109,10 @@
 h6 {
   color: red;
   font-size: 24;
+}
+
+#user-info {
+  background-color: #F2F1F0;
+  height: 190px;
+  width: 100%;
 }

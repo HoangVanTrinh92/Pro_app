@@ -1,0 +1,48 @@
+<div id="wish-list">
+  <% if user_signed_in? %>
+    <% wish_list = @user.show_wishes %>
+    <% wish_books = wish_list.each_with_object([]) do |w, object|
+      object << Book.find_by(id: w) %>
+    <% end %>
+
+    <div class = "books">
+      <h1><%= @user.email %> wish list books</h1>
+      <% wish_books.each do |book| %>
+        <div class =  "book">
+
+          <div class="book-image">
+            <%= link_to book_path(book) do %>
+              <%= image_tag book.picture, class: "image-book" if book.picture? %>
+            <% end %>
+          </div>
+
+          <div class="title">
+            <%= link_to book_path(book) do %>
+              <%= book.title %>
+              <span><img class="callout" src="../assets/callout_black.gif" /><%= book.title %></span>
+            <% end %>
+          </div>
+
+          <div class="author">
+            <%= book.author %>
+          </div>
+
+          <div class="number page">
+            <small>
+              <strong>Number Page:</strong>
+              <%= book.number_page %>
+            </small>
+          </div>
+
+          <div class="publish date">
+            <small>
+              <strong>Publish Date:</strong>
+              <%= book.publish_date %>
+            </small>
+          </div>
+        </div>
+      <% end %>
+      <br>
+    </div>
+  <% end %>
+</div>

@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @users = User.normal.all.paginate page: params[:page]
+    @users = User.normal.all
   end
 
   def show

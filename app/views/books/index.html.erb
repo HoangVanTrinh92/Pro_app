@@ -66,14 +66,9 @@
               <%= book.publish_date %>
             </small>
           </div>
-
-          <!-- <div>
-            <%= link_to_if current_user, 'Show', book_path(book) %>
-          </div> -->
-
         </div>
       <% end %>
-
+      <%= paginate @books, theme: 'twitter-bootstrap-3'%>
     <br>
     </div>
   </div>
