@@ -16,6 +16,9 @@ namespace :db do
     puts "Creating Reviews and Ratings"
     70.times {FactoryGirl.create :review}
 
+    puts "Creating Likes"
+    70.times {FactoryGirl.create :like}
+
     puts "Creating books"
     40.times {FactoryGirl.create :book}
 

@@ -1,5 +1,6 @@
 class Book < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   enum category: [:domestic_literature, :foreign_literature, :fiction, :romance,
                   :history, :poetry, :short_stories, :marketing, :financial_currency,

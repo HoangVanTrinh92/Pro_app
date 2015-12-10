@@ -1,5 +1,6 @@
 
 <div class="books">
+
   <table id="show-book">
     <tr>
       <td class="td-image"><%= image_tag @book.picture if @book.picture? %></td>
@@ -27,6 +28,24 @@
         <p>
           <strong>Category:</strong>
           <%= @book.category %>
+        </p>
+
+        <p>
+          This book has <%= @book.likes.count %> likes
+        </p>
+
+        <p>
+          <% like = Like.where(user_id: current_user.id, book_id: @book.id).first %>
+          <% if like == nil %>
+            <%= form_for [@book, @book.likes.new] do |f| %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :book_id, value: @book.id %>
+              <%= f.submit "Like" %>
+            <% end %>
+          <% else %>
+            <%= link_to "Unlike", book_like_path(@book, like), method: :delete %>
+          <% end %>
+          <%#binding.pry %>
         </p>
       </td>
     </tr>
