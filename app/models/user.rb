@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   scope :normal, ->{where role: "normal"}
 
   has_many :users, through: :relationships
-
+  has_many :likes, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
   enum role: [:normal, :admin]
@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
     j = self.id
     e.delete(j)
     book_ids = User.where(id: e).each_with_object([]) do |user, obj|
-      obj << user.reviews.pluck(:book_id)
+      obj << user.likes.pluck(:book_id)
     end
 
     count_books = book_ids.flatten.uniq.each_with_object([]) do |most_book, obje|

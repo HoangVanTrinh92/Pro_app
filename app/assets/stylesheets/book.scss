@@ -58,9 +58,9 @@
 }
 
 #cont-wraper {
-  background-color: white;
+  // background-color: white;
   margin-top: 140px;
-  min-height: 2500px;
+  min-height: 500px;
   max-height: 4000px;
 }
 
@@ -74,6 +74,8 @@
 
 #listting-books {
   margin: 5px;
+  width: 100%;
+  float: left;
 }
 ///// Home static page
 
@@ -82,7 +84,9 @@
 }
 
 #suggest-book {
-  margin-bottom: 700px;
+  width: 100%;
+  float: left;
+  margin-bottom: 50px;
 }
 
 #footer {
@@ -94,4 +98,9 @@
 .image-book {
   max-width: 190px;
   max-height: 211px;
+}
+
+h6 {
+  color: red;
+  font-size: 24;
 }

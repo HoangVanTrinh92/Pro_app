@@ -30,9 +30,12 @@
   <div id="listting-books">
     <div class = "books">
       <h1>Listing Books</h1>
+      <% if @books.count == 0 %>
+        <h2>Did not find results!</h2>
+      <% end %>
+      <%= paginate @books, theme: 'twitter-bootstrap-3'%>
       <% @books.each do |book| %>
         <div class =  "book">
-
           <div class="book-image">
             <%= link_to book_path(book) do %>
               <%= image_tag book.picture, class: "image-book" if book.picture? %>
@@ -73,7 +76,6 @@
 
     <br>
     </div>
-    <%= paginate @books, theme: 'twitter-bootstrap-3'%>
   </div>
 
   <p id="notice"><%= notice %></div>
