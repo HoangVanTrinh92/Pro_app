@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :users, through: :relationships
   has_many :likes, dependent: :destroy
+  has_many :books, through: :likes
   has_many :reviews, dependent: :destroy
 
   enum role: [:normal, :admin]
@@ -13,6 +14,12 @@ class User < ActiveRecord::Base
   after_create :make_relationship
 
   relationships = Relationship.all
+
+  def show_wishes
+    wishes = Like.all.each_with_object([]) do |wish, obje|
+      obje << wish.book_id if wish.user_id == self.id
+    end
+  end
 
   def show_suggest_user level=10
     relations = Relationship.all.each_with_object([]) do |r, obj|
@@ -34,6 +41,7 @@ class User < ActiveRecord::Base
     end
     count_books.sort.reverse.take(5).flatten.select.each_with_index { |_,i| i % 2 == 1 }
   end
+  # binding.pry
 
   def curr_user
     User.find_by(id: self.id)

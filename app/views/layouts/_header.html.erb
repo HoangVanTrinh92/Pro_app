@@ -32,11 +32,16 @@
   </div>
   <div class="links">
     <a href="/">Home</a>
-    <a href="#">Wish List (0)</a>
-    <a href="#">My Account</a>
-    <a href="#">Shopping Cart</a>
+    <% if user_signed_in? %>
+      <%= link_to "Wish List", user_path(current_user) %>
+      <%= link_to "My Account", user_path(current_user) %>
+      <% if current_user.role == "admin" %>
+        <a><%= link_to "Manage Book", admin_books_path %></a>
+        <a><%= link_to "Add New Book", new_admin_book_path %></a>
+      <% end %>
+    <% end %>
     <a><%= link_to "All Book", books_path %></a>
-    <a><%= link_to "Manage Book", admin_books_path %></a>
+
   </div>
   <div id="menu">
     <ul style="display: block;">
