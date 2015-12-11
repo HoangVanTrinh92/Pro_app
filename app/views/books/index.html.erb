@@ -1,5 +1,7 @@
+<h6 id="notice"><%= notice %></h6>
+<a class="btn-show-advand-search btn btn-info toggler">Advand Search</a>
 <div id="book-index">
-  <div id="advand-search">
+  <div id="advand-search" class="collapse">
     <%= search_form_for @search, url: books_path do |f| %>
       <div class="advand-search-form">
         <div class=search-field>
@@ -73,7 +75,6 @@
     </div>
   </div>
 
-  <p id="notice"><%= notice %></div>
   <div id="suggest-book">
     <% if user_signed_in? %>
       <% suggest = current_user.show_suggest_user %>

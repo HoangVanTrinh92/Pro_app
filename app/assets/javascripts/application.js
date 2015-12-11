@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require_tree .
+
 
 function add_fields(link, association, content) {
   var new_id = new Date().getTime();

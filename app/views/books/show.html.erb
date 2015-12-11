@@ -5,19 +5,19 @@
     <tr>
       <td class="td-image"><%= image_tag @book.picture if @book.picture? %></td>
       <td class="td-info">
-        <p>
-          <strong>Title:</strong>
+        <h1>
+          <!-- <strong>Title:</strong> -->
           <%= @book.title %>
-        </p>
+        </h1>
+
+        <h2>
+          <strong>Author:</strong>
+          <%= @book.author %>
+        </h2>
 
         <p>
           <strong>Publish date:</strong>
           <%= @book.publish_date %>
-        </p>
-
-        <p>
-          <strong>Author:</strong>
-          <%= @book.author %>
         </p>
 
         <p>
