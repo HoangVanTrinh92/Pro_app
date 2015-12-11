@@ -2,9 +2,6 @@ $(document).ready(function() {
   $(".btn-show-advand-search").on("click", function(e) {
     $("#advand-search").toggle("slow");
   });
-
-  $('.collapse').collapsing();
-
   /* Search */
   $('.button-search').bind('click', function() {
     url = $('base').attr('href') + 'index.php?route=product/search';

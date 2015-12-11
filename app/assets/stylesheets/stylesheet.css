@@ -13,9 +13,9 @@ body {
   margin: 0px;
   padding: 0px;
 }
-body, td, th, input, textarea, select{
+/*body, td, th, input, textarea, select{
   font-size: 12px;
-}
+}*/
 
 .bg_bottom{ background:url(images/bg_bottom.gif) left bottom repeat-x; }
 .bg_top{ background:url(images/bg_top.png) left top repeat-x; }
@@ -44,16 +44,6 @@ h2 {
   letter-spacing:1px
 }
 
-#notice {
-  color: red;
-  font-family: 'Oswald', sans-serif;
-  margin-top: 20px;
-  margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: normal;
-  /*text-transform:uppercase;*/
-  letter-spacing:1px
-}
 #column-right h2 {
   color: #000;
 }

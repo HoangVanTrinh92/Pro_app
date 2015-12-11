@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20151210014902) do
     t.integer  "number_page",  limit: 4
     t.integer  "category",     limit: 4
     t.string   "picture",      limit: 255
+    t.string   "description",  limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

@@ -7,6 +7,7 @@ class CreateBooks < ActiveRecord::Migration
       t.integer :number_page
       t.integer :category
       t.string :picture
+      t.string :description
 
       t.timestamps null: false
     end

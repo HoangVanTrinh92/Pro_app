@@ -116,3 +116,31 @@ h6 {
   height: 190px;
   width: 100%;
 }
+
+#notice {
+  color: red;
+  font-family: 'Oswald', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing:1px
+}
+
+.book-title {
+  color: blue;
+  font-family: 'Oswald', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-weight: normal;
+  letter-spacing:1px
+}
+
+.book-author {
+  color: #971122;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: normal;
+}
