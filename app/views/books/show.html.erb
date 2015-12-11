@@ -5,15 +5,14 @@
     <tr>
       <td class="td-image"><%= image_tag @book.picture if @book.picture? %></td>
       <td class="td-info">
-        <h1>
-          <!-- <strong>Title:</strong> -->
+        <p class="book-title">
           <%= @book.title %>
-        </h1>
+        </p>
 
-        <h2>
+        <p class="book-author">
           <strong>Author:</strong>
           <%= @book.author %>
-        </h2>
+        </p>
 
         <p>
           <strong>Publish date:</strong>
@@ -45,7 +44,11 @@
           <% else %>
             <%= link_to "Unlike", book_like_path(@book, like), method: :delete %>
           <% end %>
-          <%#binding.pry %>
+        </p>
+
+        <p>
+          <strong>Description:</strong>
+          <%= @book.description %>
         </p>
       </td>
     </tr>

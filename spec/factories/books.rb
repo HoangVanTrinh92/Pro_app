@@ -12,6 +12,7 @@ FactoryGirl.define do
       :manga, :arts, :negative, :mystical_science_books, :family_cookbook,
       :historical_geography, :agriculture_and_forestry, :sports_books,
       :political_books_philosophy].sample}
+    description {Faker::Lorem.paragraph}
     sequence(:picture) {|n| "pro#{n}"}
     #picture "product_1-142x211"
   end

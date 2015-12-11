@@ -1,33 +1,57 @@
 <p id="notice"><%= notice %></p>
 <div class = "books">
-  <p>
-    <%= image_tag @book.picture %>
-  </p>
+  <table id="show-book">
+    <tr>
+      <td class="td-image"><%= image_tag @book.picture if @book.picture? %></td>
+      <td class="td-info">
+        <p class="book-title">
+          <%= @book.title %>
+        </p>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @book.title %>
-  </p>
+        <p class="book-author">
+          <strong>Author:</strong>
+          <%= @book.author %>
+        </p>
 
-  <p>
-    <strong>Publish date:</strong>
-    <%= @book.publish_date %>
-  </p>
+        <p>
+          <strong>Publish date:</strong>
+          <%= @book.publish_date %>
+        </p>
 
-  <p>
-    <strong>Author:</strong>
-    <%= @book.author %>
-  </p>
+        <p>
+          <strong>Number page:</strong>
+          <%= @book.number_page %>
+        </p>
 
-  <p>
-    <strong>Number page:</strong>
-    <%= @book.number_page %>
-  </p>
+        <p>
+          <strong>Category:</strong>
+          <%= @book.category %>
+        </p>
 
-  <p>
-    <strong>Category:</strong>
-    <%= @book.category %>
-  </p>
+        <p>
+          This book has <%= @book.likes.count %> likes
+        </p>
+
+        <p>
+          <% like = Like.where(user_id: current_user.id, book_id: @book.id).first %>
+          <% if like == nil %>
+            <%= form_for [@book, @book.likes.new] do |f| %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :book_id, value: @book.id %>
+              <%= f.submit "Like" %>
+            <% end %>
+          <% else %>
+            <%= link_to "Unlike", book_like_path(@book, like), method: :delete %>
+          <% end %>
+        </p>
+
+        <p>
+          <strong>Description:</strong>
+          <%= @book.description %>
+        </p>
+      </td>
+    </tr>
+  </table>
 
   <div class="reviews">
     <h4 id="reviews-count">This book has <%= pluralize(@book.reviews.count, 'review') %></h4>
