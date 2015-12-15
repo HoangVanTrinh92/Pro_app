@@ -25,14 +25,15 @@ class User < ActiveRecord::Base
     relations = Relationship.all.each_with_object([]) do |r, obj|
       obj << r if r.user1_id == self.id || r.user2_id == self.id
     end
-    a = relations.sort_by {|s| s.relation}
-    b = a.reverse.take(level)
-    c = b.collect{|user1| user1.user1_id}
-    d = b.collect{|user2| user2.user2_id}
-    e = c+d
-    j = self.id
-    e.delete(j)
-    book_ids = User.where(id: e).each_with_object([]) do |user, obj|
+    sort_relations = relations.sort_by {|s| s.relation}
+    top_relation = sort_relations.reverse.take(level)
+    find_user1 = top_relation.collect{|user1| user1.user1_id}
+    find_user2 = top_relation.collect{|user2| user2.user2_id}
+    all_top = find_user1 + find_user2
+    current_user_id = self.id
+    all_top.delete(current_user_id)
+
+    book_ids = User.where(id: current_user_id).each_with_object([]) do |user, obj|
       obj << user.likes.pluck(:book_id)
     end
 
@@ -41,7 +42,6 @@ class User < ActiveRecord::Base
     end
     count_books.sort.reverse.take(5).flatten.select.each_with_index { |_,i| i % 2 == 1 }
   end
-  # binding.pry
 
   def curr_user
     User.find_by(id: self.id)
